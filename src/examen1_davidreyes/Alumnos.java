@@ -1,5 +1,6 @@
 package examen1_davidreyes;
 
+
 public class Alumnos {
 
     private String Nombre;
@@ -9,8 +10,10 @@ public class Alumnos {
     private String cuenta;
     private String usuario;
     private String contra;
+    private int enseñanza;
 
     public Alumnos(String Nombre, int edad, String carrera, String lugar, String cuenta, String usuario, String contra) {
+        super();
         this.Nombre = Nombre;
         this.edad = edad;
         this.carrera = carrera;
@@ -18,6 +21,7 @@ public class Alumnos {
         this.cuenta = cuenta;
         this.usuario = usuario;
         this.contra = contra;
+
     }
 
     public String getNombre() {

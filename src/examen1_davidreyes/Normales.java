@@ -1,14 +1,13 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package examen1_davidreyes;
 
-/**
- *
- * @author david
- */
-public class Normales {
+import java.util.ArrayList;
+
+public class Normales extends Alumnos {
+    private ArrayList examenes;
+
+    public Normales(ArrayList examenes, String Nombre, int edad, String carrera, String lugar, String cuenta, String usuario, String contra) {
+        super(Nombre, edad, carrera, lugar, cuenta, usuario, contra);
+        this.examenes = examenes;
+    }
     
 }

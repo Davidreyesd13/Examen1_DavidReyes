@@ -17,6 +17,7 @@ public class Login extends javax.swing.JFrame {
     public Login() {
         initComponents();
         setLocationRelativeTo(null);
+        ArrayList<Alumnos> lista = new ArrayList();
     }
     String usuario, contra, usuario_res, contra_res;
     ArrayList<Object> listausuarios = new ArrayList(), listacontra = new ArrayList();
@@ -36,6 +37,34 @@ public class Login extends javax.swing.JFrame {
         jtf_usuarioregis = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         jpf_passwordregis = new javax.swing.JPasswordField();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jtf_nombre = new javax.swing.JTextField();
+        jtf_edad = new javax.swing.JTextField();
+        jtf_carrera = new javax.swing.JTextField();
+        jtf_nacimiento = new javax.swing.JTextField();
+        jLabel6 = new javax.swing.JLabel();
+        jtf_numcuent = new javax.swing.JTextField();
+        cb_tipodealumno = new javax.swing.JComboBox<>();
+        jLabel7 = new javax.swing.JLabel();
+        Tutor = new javax.swing.JDialog();
+        jLabel8 = new javax.swing.JLabel();
+        jtf_tutorias = new javax.swing.JTextField();
+        jLabel9 = new javax.swing.JLabel();
+        jtf_ganancias = new javax.swing.JTextField();
+        jLabel10 = new javax.swing.JLabel();
+        jtf_tutosdads = new javax.swing.JTextField();
+        jLabel11 = new javax.swing.JLabel();
+        jtf_enseñanza = new javax.swing.JTextField();
+        jButton2 = new javax.swing.JButton();
+        Normal = new javax.swing.JDialog();
+        jLabel12 = new javax.swing.JLabel();
+        jtf_conociminetoacum = new javax.swing.JTextField();
+        jLabel13 = new javax.swing.JLabel();
+        jtf_aprendizaje = new javax.swing.JTextField();
+        jToggleButton1 = new javax.swing.JToggleButton();
         jb_usuario = new javax.swing.JLabel();
         jtf_Usuario = new javax.swing.JTextField();
         lb_Password = new javax.swing.JLabel();
@@ -45,9 +74,28 @@ public class Login extends javax.swing.JFrame {
 
         jb_usuarioregistro.setText("Usuario:");
 
-        jButton1.setText("Registrar");
+        jButton1.setText("Crear");
+        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton1MouseClicked(evt);
+            }
+        });
 
         jLabel1.setText("Contraseña:");
+
+        jLabel2.setText("Nombre");
+
+        jLabel3.setText("Edad");
+
+        jLabel4.setText("Carrera");
+
+        jLabel5.setText("Lugar de Nacimiento");
+
+        jLabel6.setText("Numero de cuenta");
+
+        cb_tipodealumno.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Tutor", "Normal" }));
+
+        jLabel7.setText("Tipo de estudiante");
 
         javax.swing.GroupLayout RegistroLayout = new javax.swing.GroupLayout(Registro.getContentPane());
         Registro.getContentPane().setLayout(RegistroLayout);
@@ -56,31 +104,168 @@ public class Login extends javax.swing.JFrame {
             .addGroup(RegistroLayout.createSequentialGroup()
                 .addGroup(RegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(RegistroLayout.createSequentialGroup()
-                        .addGap(153, 153, 153)
-                        .addComponent(jButton1))
+                        .addGap(46, 46, 46)
+                        .addGroup(RegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jtf_usuarioregis, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jpf_passwordregis, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(RegistroLayout.createSequentialGroup()
-                        .addGap(61, 61, 61)
-                        .addGroup(RegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jb_usuarioregistro)
-                            .addComponent(jtf_usuarioregis)
-                            .addComponent(jpf_passwordregis, javax.swing.GroupLayout.DEFAULT_SIZE, 127, Short.MAX_VALUE)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(170, Short.MAX_VALUE))
+                        .addGap(44, 44, 44)
+                        .addGroup(RegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(RegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(jtf_nacimiento, javax.swing.GroupLayout.DEFAULT_SIZE, 291, Short.MAX_VALUE)
+                                .addComponent(jLabel2)
+                                .addComponent(jLabel4)
+                                .addComponent(jLabel5)
+                                .addComponent(jb_usuarioregistro)
+                                .addComponent(jtf_nombre)
+                                .addComponent(jtf_carrera))
+                            .addGroup(RegistroLayout.createSequentialGroup()
+                                .addGroup(RegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel3)
+                                    .addComponent(jtf_edad, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(28, 28, 28)
+                                .addGroup(RegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jtf_numcuent))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 50, Short.MAX_VALUE)
+                                .addGroup(RegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(cb_tipodealumno, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel7))))))
+                .addGap(50, 50, 50)
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(46, 46, 46))
         );
         RegistroLayout.setVerticalGroup(
             RegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(RegistroLayout.createSequentialGroup()
-                .addGap(29, 29, 29)
-                .addComponent(jb_usuarioregistro)
+                .addContainerGap()
+                .addComponent(jLabel2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jtf_nombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(RegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel3)
+                    .addComponent(jLabel6)
+                    .addComponent(jLabel7))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(RegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jtf_edad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jtf_numcuent, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cb_tipodealumno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel4)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jtf_carrera, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 16, Short.MAX_VALUE)
+                .addComponent(jLabel5)
+                .addGap(4, 4, 4)
+                .addComponent(jtf_nacimiento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jb_usuarioregistro)
+                .addGap(18, 18, 18)
                 .addComponent(jtf_usuarioregis, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
+                .addGap(8, 8, 8)
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jpf_passwordregis, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(47, 47, 47)
+                .addGap(8, 8, 8))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, RegistroLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jButton1)
-                .addGap(76, 76, 76))
+                .addContainerGap())
+        );
+
+        jLabel8.setText("clase de tutorias");
+
+        jLabel9.setText("Ganancias");
+
+        jLabel10.setText("Tutorias dadas");
+
+        jLabel11.setText("Nivel de enseñanza");
+
+        jButton2.setText("Agregar");
+
+        javax.swing.GroupLayout TutorLayout = new javax.swing.GroupLayout(Tutor.getContentPane());
+        Tutor.getContentPane().setLayout(TutorLayout);
+        TutorLayout.setHorizontalGroup(
+            TutorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(TutorLayout.createSequentialGroup()
+                .addGap(25, 25, 25)
+                .addGroup(TutorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLabel11)
+                    .addComponent(jLabel10)
+                    .addComponent(jLabel8)
+                    .addComponent(jtf_tutorias)
+                    .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jtf_ganancias)
+                    .addComponent(jtf_tutosdads)
+                    .addComponent(jtf_enseñanza)
+                    .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, 103, Short.MAX_VALUE))
+                .addContainerGap(30, Short.MAX_VALUE))
+        );
+        TutorLayout.setVerticalGroup(
+            TutorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(TutorLayout.createSequentialGroup()
+                .addGap(21, 21, 21)
+                .addComponent(jLabel8)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jtf_tutorias, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel9)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jtf_ganancias, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel10)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jtf_tutosdads, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel11)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jtf_enseñanza, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(32, 32, 32)
+                .addComponent(jButton2)
+                .addContainerGap(44, Short.MAX_VALUE))
+        );
+
+        jLabel12.setText("Conocimiento acumulado");
+
+        jLabel13.setText("Nivel de aprendizaje");
+
+        jToggleButton1.setText("Agregar");
+
+        javax.swing.GroupLayout NormalLayout = new javax.swing.GroupLayout(Normal.getContentPane());
+        Normal.getContentPane().setLayout(NormalLayout);
+        NormalLayout.setHorizontalGroup(
+            NormalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(NormalLayout.createSequentialGroup()
+                .addGap(18, 18, 18)
+                .addGroup(NormalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(NormalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(jtf_aprendizaje, javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jLabel13, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 117, Short.MAX_VALUE)
+                        .addComponent(jtf_conociminetoacum, javax.swing.GroupLayout.Alignment.LEADING)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, NormalLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jToggleButton1)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        NormalLayout.setVerticalGroup(
+            NormalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(NormalLayout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addComponent(jLabel12)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jtf_conociminetoacum, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel13)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jtf_aprendizaje, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jToggleButton1)
+                .addContainerGap(15, Short.MAX_VALUE))
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -98,7 +283,7 @@ public class Login extends javax.swing.JFrame {
             }
         });
 
-        jb_registrar.setText("Registrar");
+        jb_registrar.setText("Crear");
         jb_registrar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jb_registrarMouseClicked(evt);
@@ -142,7 +327,15 @@ public class Login extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jb_ingresarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_ingresarMouseClicked
-
+        usuario = jb_usuario.getText();
+        contra=jp_contraseña.getText();
+        for (Object listausuario : listausuarios) {
+            if (usuario.equals(listausuario)) {
+                JOptionPane.showMessageDialog(null, "Usuario correcto");
+                break;
+            }
+        }
+        
     }//GEN-LAST:event_jb_ingresarMouseClicked
 
     private void jb_registrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_registrarMouseClicked
@@ -151,6 +344,23 @@ public class Login extends javax.swing.JFrame {
         Registro.pack();
         Registro.setLocationRelativeTo(null);
         Registro.setVisible(true);
+        
+
+    }//GEN-LAST:event_jb_registrarMouseClicked
+
+    private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
+        
+        if (cb_tipodealumno.getSelectedItem() == "Tutor") {
+            Tutor.setModal(true);
+            Tutor.pack();
+            Tutor.setLocationRelativeTo(null);
+            Tutor.setVisible(true);
+        } else {
+            Normal.setModal(true);
+            Normal.pack();
+            Normal.setLocationRelativeTo(null);
+            Normal.setVisible(true);
+        }
         usuario_res = jb_usuarioregistro.getText();
         contra_res = jpf_passwordregis.getText();
         if (listausuarios.isEmpty()) {
@@ -171,8 +381,7 @@ public class Login extends javax.swing.JFrame {
         }
         jb_usuarioregistro.setText("");
         jpf_passwordregis.setText("");
-
-    }//GEN-LAST:event_jb_registrarMouseClicked
+    }//GEN-LAST:event_jButton1MouseClicked
 
     /**
      * @param args the command line arguments
@@ -210,9 +419,26 @@ public class Login extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JDialog Normal;
     private javax.swing.JDialog Registro;
+    private javax.swing.JDialog Tutor;
+    private javax.swing.JComboBox<String> cb_tipodealumno;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
+    private javax.swing.JToggleButton jToggleButton1;
     private javax.swing.JButton jb_ingresar;
     private javax.swing.JButton jb_registrar;
     private javax.swing.JLabel jb_usuario;
@@ -220,6 +446,17 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JPasswordField jp_contraseña;
     private javax.swing.JPasswordField jpf_passwordregis;
     private javax.swing.JTextField jtf_Usuario;
+    private javax.swing.JTextField jtf_aprendizaje;
+    private javax.swing.JTextField jtf_carrera;
+    private javax.swing.JTextField jtf_conociminetoacum;
+    private javax.swing.JTextField jtf_edad;
+    private javax.swing.JTextField jtf_enseñanza;
+    private javax.swing.JTextField jtf_ganancias;
+    private javax.swing.JTextField jtf_nacimiento;
+    private javax.swing.JTextField jtf_nombre;
+    private javax.swing.JTextField jtf_numcuent;
+    private javax.swing.JTextField jtf_tutorias;
+    private javax.swing.JTextField jtf_tutosdads;
     private javax.swing.JTextField jtf_usuarioregis;
     private javax.swing.JLabel lb_Password;
     // End of variables declaration//GEN-END:variables

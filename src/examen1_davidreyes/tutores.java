@@ -1,14 +1,17 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package examen1_davidreyes;
 
-/**
- *
- * @author david
- */
-public class tutores {
-    
+import java.util.ArrayList;
+
+public class tutores extends Alumnos{
+private ArrayList clases;
+private int ganancias;
+private int tutosdadas;
+
+    public tutores(ArrayList clases, int ganancias, int tutosdadas, String Nombre, int edad, String carrera, String lugar, String cuenta, String usuario, String contra) {
+        super(Nombre, edad, carrera, lugar, cuenta, usuario, contra);
+        this.clases = clases;
+        this.ganancias = ganancias;
+        this.tutosdadas = tutosdadas;
+    }
+
 }
